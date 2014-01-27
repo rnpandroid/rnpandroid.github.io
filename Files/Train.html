@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta http-equiv="imagetoolbar" content="no" />
+</head>
+<style>
+	body{
+		background-image: -o-linear-gradient(bottom, #CEE5F7 55%, #84A627 100%);
+		background-image: -moz-linear-gradient(bottom, #CEE5F7 55%, #84A627 100%);
+		background-image: -webkit-linear-gradient(bottom, #CEE5F7 55%, #84A627 100%);
+		background-image: -ms-linear-gradient(bottom, #CEE5F7 55%, #84A627 100%);
+		background-image: linear-gradient(to bottom, #CEE5F7 55%, #84A627 100%);
+		margin:0;
+		padding-bottom:75px;
+	}
+	.center{
+		margin:20px auto;
+		position:relative; top:90px;
+		width:800px;
+	}
+	.trem{
+		-webkit-animation:trem 1s linear infinite;
+		-moz-animation:trem 1s linear infinite;
+		animation:trem 1s linear infinite;
+		position:relative;
+		z-index:9;
+	}
+	@-moz-keyframes trem { 0% { -moz-transform: translateY(-5px); } }
+	@-webkit-keyframes trem { 50% { -webkit-transform: translateY(-15px);; } }
+	@keyframes trem { 100% { -webkit-transform: translateY(-5px); } }
+	
+	.cabine{
+		background-image: -o-linear-gradient(bottom, rgb(128, 128, 128) 0%, rgb(0, 0, 0) 100%);
+		background-image: -moz-linear-gradient(bottom, rgb(128, 128, 128) 0%, rgb(0, 0, 0) 100%);
+		background-image: -webkit-linear-gradient(bottom, rgb(128, 128, 128) 0%, rgb(0, 0, 0) 100%);
+		background-image: -ms-linear-gradient(bottom, rgb(128, 128, 128) 0%, rgb(0, 0, 0) 100%);
+		background-image: linear-gradient(to bottom, rgb(128, 128, 128) 0%, rgb(0, 0, 0) 100%);
+		border-radius:80px 100px 0 0;
+		-moz-border-radius:80px 100px 0 0;
+		-webkit-border-radius:80px 100px 0 0;
+		height:345px;
+		position:relative;
+		width:400px;
+		z-index:9;
+	}
+	.teto{
+		background-image: -o-linear-gradient(top, rgb(0, 0, 0) 0%, rgb(89, 89, 89) 100%);
+		background-image: -moz-linear-gradient(top, rgb(0, 0, 0) 0%, rgb(89, 89, 89) 100%);
+		background-image: -webkit-linear-gradient(top, rgb(0, 0, 0) 0%, rgb(89, 89, 89) 100%);
+		background-image: -ms-linear-gradient(top, rgb(0, 0, 0) 0%, rgb(89, 89, 89) 100%);
+		background-image: linear-gradient(to top, rgb(0, 0, 0) 0%, rgb(89, 89, 89) 100%);
+		border-radius:80px 100px 0 0;
+		-moz-border-radius:80px 100px 0 0;
+		-webkit-border-radius:80px 100px 0 0;
+		height:100px;
+		width:400px;
+	}
+	.detalhe{
+		background-image: -o-linear-gradient(right top, rgb(128, 128, 128) 0%, rgb(0, 0, 0) 100%);
+		background-image: -moz-linear-gradient(right top, rgb(128, 128, 128) 0%, rgb(0, 0, 0) 100%);
+		background-image: -webkit-linear-gradient(right top, rgb(128, 128, 128) 0%, rgb(0, 0, 0) 100%);
+		background-image: -ms-linear-gradient(right top, rgb(128, 128, 128) 0%, rgb(0, 0, 0) 100%);
+		background-image: linear-gradient(to right top, rgb(128, 128, 128) 0%, rgb(0, 0, 0) 100%);
+		border-radius:100px 100px 0 0;
+		-moz-border-radius:100px 100px 0 0;
+		-webkit-border-radius:100px 100px 0 0;
+		float:right;
+		height:100px;
+		width:180px;
+	}
+	.vidro{
+		background-image: -o-linear-gradient(right bottom, rgb(221, 233, 252) 0%, rgb(179, 202, 242) 100%);
+		background-image: -moz-linear-gradient(right bottom, rgb(221, 233, 252) 0%, rgb(179, 202, 242) 100%);
+		background-image: -webkit-linear-gradient(right bottom, rgb(221, 233, 252) 0%, rgb(179, 202, 242) 100%);
+		background-image: -ms-linear-gradient(right bottom, rgb(221, 233, 252) 0%, rgb(179, 202, 242) 100%);
+		background-image: linear-gradient(to right bottom, rgb(221, 233, 252) 0%, rgb(179, 202, 242) 100%);
+	}
+	.detalhe .vidro{
+		border-radius:80px 80px 0 0;
+		-moz-border-radius:80px 80px 0 0;
+		-webkit-border-radius:80px 80px 0 0;
+		border-right:solid 10px #0594c7;
+		float:right;
+		margin:13px;
+		height:75px;
+		width:140px;
+	}
+	.janela-lateral{
+		border-right:solid 2px #000;
+		float:left;
+		height: 215px;
+		padding: 15px;
+		width: 190px;
+	}
+	.janela-frente{
+		float:left;
+		width: 148px;
+	}
+	.porta{
+		background-image: -o-linear-gradient(top, rgb(87, 87, 87) 0%, rgb(153, 153, 153) 100%);
+		background-image: -moz-linear-gradient(top, rgb(87, 87, 87) 0%, rgb(153, 153, 153) 100%);
+		background-image: -webkit-linear-gradient(top, rgb(87, 87, 87) 0%, rgb(153, 153, 153) 100%);
+		background-image: -ms-linear-gradient(top, rgb(87, 87, 87) 0%, rgb(153, 153, 153) 100%);
+		background-image: linear-gradient(to top, rgb(87, 87, 87) 0%, rgb(153, 153, 153) 100%);
+		height:185px;
+		padding:15px;
+	}
+	.porta .vidro{
+		border-top:solid 20px #2a8ac7;
+		height:60px;
+		width:100%;
+	}
+	.fecho{
+		display:inline-block;
+		text-align:center;
+		width:100%;
+	}
+	.fecho span{
+		background-color:#f3e008;
+		border-radius:5px;
+		-moz-border-radius:5px;
+		-webkit-border-radius:5px;
+		border:solid 3px #f7de05;
+		display:inline-block;
+		height:1px;
+		width:10px;
+	}
+	.macaneta{
+		display:inline-block;
+		margin-top:30px;
+		text-align:center;
+		width:100%;
+	}
+	.macaneta span{
+		background-color:#f7de05;
+		float:left;
+	}
+	.macaneta .it-1{
+		border-radius:10px;
+		-moz-border-radius:10px;
+		-webkit-border-radius:10px;
+		height:10px;
+		width:10px;
+	}
+	.macaneta .it-2{
+		border-radius:10px;
+		-moz-border-radius:10px;
+		-webkit-border-radius:10px;
+		height:5px;
+		position:relative; left:-5px; top:3px;
+		width:20px;
+	}
+	.janela-frente{
+		height:214px;
+		padding:15px;
+	}
+	.janela-frente .vidro{
+		height:185px;
+		padding:15px;
+	}
+	.janela-frente span{
+		background-color:#fff;
+		display:inline-block;
+		position:relative;
+		-moz-transform:rotate(138deg);
+		-webkit-transform:rotate(138deg);
+		width:1px;
+	}
+	.janela-frente .it-1{
+		height:50px;
+		left:100px; top:-100px;
+	}
+	.janela-frente .it-2{
+		height:155px;
+		left:50px;
+		top:10px;
+	}
+	.janela-frente .it-3{
+		height: 60px;
+		left: 10px;
+		top: -10px;
+	}
+	.carroceria{
+		background-color:#1e1d22;
+		border-radius:0 0 80px 80px;
+		-moz-border-radius:0 0 80px 80px;
+		-webkit-border-radius:0 0 80px 80px;
+		display:inline-block;
+		position:relative;
+		padding-bottom:35px;
+		width:90%;
+	}
+	.vagao{
+		background-color:#b4b3b3;
+		border-top:solid 15px #5a5959;
+		border-radius:0 0 40px 40px;
+		-moz-border-radius:0 0 40px 40px;
+		-webkit-border-radius:0 0 40px 40px;
+		display:inline-block;
+		height:50px;
+		position:relative; left:-15px; top:-5px;
+		width:430px;
+	}
+	.motor{
+		position:relative;
+	}
+	.color{
+		background-image: -o-linear-gradient(top, rgb(59, 58, 59) 0%, rgb(148, 148, 148) 100%);
+		background-image: -moz-linear-gradient(top, rgb(59, 58, 59) 0%, rgb(148, 148, 148) 100%);
+		background-image: -webkit-linear-gradient(top, rgb(59, 58, 59) 0%, rgb(148, 148, 148) 100%);
+		background-image: -ms-linear-gradient(top, rgb(59, 58, 59) 0%, rgb(148, 148, 148) 100%);
+		background-image: linear-gradient(to top, rgb(59, 58, 59) 0%, rgb(148, 148, 148) 100%);
+		border-radius:195px;
+		-moz-border-radius:195px;
+		-webkit-border-radius:195px;
+		bottom: -45px;
+		height: 195px;
+		position: absolute;
+		right: 15px;
+		width: 510px;
+		z-index: 9999;
+	}
+	.color span{
+		border-radius:195px 195px 0 0;
+		-moz-border-radius:195px 195px 0 0;
+		-webkit-border-radius:195px 195px 0 0;
+		float:left;
+		height:195px;
+		position:absolute;
+		width:330px;
+	}
+	.color .it-1{
+		border-left: solid 75px #d9d9d9;
+		left:25px;
+	}
+	.color .it-2{
+		border-left: solid 75px #d9d9d9;
+		left:155px;
+	}
+	.circle{
+		background-color:#efedee;
+		border-left:solid 15px #dcd9db;
+		border-radius:185px;
+		-moz-border-radius:185px;
+		-webkit-border-radius:185px;
+		height:185px;
+		position:absolute; right:7px; top:5px;
+		width:170px;
+	}
+	.circle .center{
+		background-color:#323131;
+		border-radius:75px;
+		-moz-border-radius:75px;
+		-webkit-border-radius:75px;
+		border: 5px solid #000;
+		height: 75px;
+		padding:20px;
+		position:absolute; top:15px; left:30px;
+		width: 75px;
+	}
+	.circle .center span{
+		background-color:#000;
+		border-radius:45px;
+		-moz-border-radius:45px;
+		-webkit-border-radius:45px;
+		border: 20px solid #fff;
+		height: 45px;
+		width: 45px;
+	}
+	.grade{
+		-moz-transform:rotate(195deg);
+		-webkit-transform:rotate(195deg);
+		background-image: -o-linear-gradient(top, rgb(0, 0, 0) 0%, rgb(89, 89, 89) 100%);
+		background-image: -moz-linear-gradient(top, rgb(0, 0, 0) 0%, rgb(89, 89, 89) 100%);
+		background-image: -webkit-linear-gradient(top, rgb(0, 0, 0) 0%, rgb(89, 89, 89) 100%);
+		background-image: -ms-linear-gradient(top, rgb(0, 0, 0) 0%, rgb(89, 89, 89) 100%);
+		background-image: linear-gradient(to top, rgb(0, 0, 0) 0%, rgb(89, 89, 89) 100%);
+		border-radius:165px 0 0;
+		-moz-border-radius:165px 0 0;
+		-webkit-border-radius:165px 0 0;
+		height:165px;
+		position:absolute; right:-35px;
+		width:165px;
+		z-index:999;
+	}
+	.roda{
+		position:relative;
+	}
+	.rod{
+		background-color:#cfcecc;
+		border:solid 2px #000;
+		display:inline-block;
+		position:relative; top:-155px;
+		 -webkit-animation:roda 2.5s linear infinite;
+		-moz-animation:roda 2.5s linear infinite;
+		animation:roda 2.5s linear infinite;
+		z-index:99999;
+	}
+	@-moz-keyframes roda { 100% { -moz-transform: rotate(360deg); } }
+	@-webkit-keyframes roda { 100% { -webkit-transform: rotate(360deg); } }
+	@keyframes roda { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+	
+	.rod.small{
+		border-radius:130px;
+		-moz-border-radius:130px;
+		-webkit-border-radius:130px;
+		height:130px;
+		width:130px;
+	}
+	.rod.medium{
+		border-radius:160px;
+		-moz-border-radius:160px;
+		-webkit-border-radius:160px;
+		height:180px;
+		width:180px;
+	}
+	.rod.big{
+		border-radius:220px;
+		-moz-border-radius:220px;
+		-webkit-border-radius:220px;
+		height:220px;
+		width:220px;
+	}
+	.roda .content{
+		background-color:#000;
+		border:solid 5px #fff;
+		margin:10px;
+	}
+	.roda .small .content{
+		border-radius:100px;
+		-moz-border-radius:100px;
+		-webkit-border-radius:100px;
+		height: 100px;
+		width: 100px;
+	}
+	.roda .medium .content{
+		border-radius:150px;
+		-moz-border-radius:150px;
+		-webkit-border-radius:150px;
+		height: 150px;
+		width: 150px;
+	}
+	.roda .big .content{
+		border-radius:190px;
+		-moz-border-radius:190px;
+		-webkit-border-radius:190px;
+		height: 190px;
+		width: 190px;
+	}
+	.roda .small .top{
+		background-color:#fff;
+		height:100px;
+		position:relative; left:45px;
+		width:10px;
+	}
+	.roda .small .center{
+		background-color:#fff;
+		border-radius:40px;
+		-moz-border-radius:40px;
+		-webkit-border-radius:40px;
+		height:40px;
+		position:relative; top:-90px;
+		width:40px;
+	}
+	.roda .small .left{
+		background-color:#fff;
+		height:10px;
+		position:relative; top:-135px;
+		width:100px;
+	}
+	.roda .medium .top{
+		background-color:#fff;
+		height:150px;
+		position:relative; left:67px;
+		width:15px;
+	}
+	.roda .medium .center{
+		background-color:#fff;
+		border-radius:60px;
+		-moz-border-radius:60px;
+		-webkit-border-radius:60px;
+		height:60px;
+		position:relative; top:-125px;
+		width:60px;
+	}
+	.roda .medium .left{
+		background-color:#fff;
+		height:15px;
+		position:relative; top:-180px;
+		width:150px;
+	}
+	.roda .big .top{
+		background-color:#fff;
+		height:190px;
+		position:relative; left:85px;
+		width:20px;
+	}
+	.roda .big .center{
+		background-color:#fff;
+		border-radius:70px;
+		-moz-border-radius:70px;
+		-webkit-border-radius:70px;
+		height:70px;
+		position:relative; top:-150px;
+		width:70px;
+	}
+	.roda .big .left{
+		background-color:#fff;
+		height:20px;
+		position:relative; top:-215px;
+		width:190px;
+	}
+	.chamine{
+		height:175px;
+		position:absolute; right:200px; top:40px;
+		width:120px;
+		z-index:99999;
+	}
+	.chamine .top{
+		background-image: -o-linear-gradient(top, rgb(87, 87, 87) 0%, rgb(153, 153, 153) 100%);
+		background-image: -moz-linear-gradient(top, rgb(87, 87, 87) 0%, rgb(153, 153, 153) 100%);
+		background-image: -webkit-linear-gradient(top, rgb(87, 87, 87) 0%, rgb(153, 153, 153) 100%);
+		background-image: -ms-linear-gradient(top, rgb(87, 87, 87) 0%, rgb(153, 153, 153) 100%);
+		background-image: linear-gradient(to top, rgb(87, 87, 87) 0%, rgb(153, 153, 153) 100%);
+		border-radius:0 0 110px 110px;
+		-moz-border-radius:0 0 110px 110px;
+		-webkit-border-radius:0 0 110px 110px;
+		border-top:solid 10px #d9d9d9;
+		height:100px;
+		position:relative;
+		width:110px;
+		z-index:2;
+	}
+	.chamine .bottom{
+		background-image: -o-linear-gradient(top, rgb(87, 87, 87) 0%, rgb(153, 153, 153) 100%);
+		background-image: -moz-linear-gradient(top, rgb(87, 87, 87) 0%, rgb(153, 153, 153) 100%);
+		background-image: -webkit-linear-gradient(top, rgb(87, 87, 87) 0%, rgb(153, 153, 153) 100%);
+		background-image: -ms-linear-gradient(top, rgb(87, 87, 87) 0%, rgb(153, 153, 153) 100%);
+		background-image: linear-gradient(to top, rgb(87, 87, 87) 0%, rgb(153, 153, 153) 100%);
+		border-radius:0 0 60px 60px;
+		-moz-border-radius:0 0 60px 60px;
+		-webkit-border-radius:0 0 60px 60px;
+		border-bottom:solid 5px #3f3e3e;
+		height:80px;
+		position:relative; left:25px; top:-15px;
+		width:60px;
+		z-index:1;
+	}
+	.nuvem{
+		position:absolute; top:-100px;
+		-webkit-animation:nuvem 1.5s linear infinite;
+		-moz-animation:nuvem 1.5s linear infinite;
+		animation:nuvem 1.5s linear infinite;
+	}
+	@-webkit-keyframes nuvem {
+		from { 
+			opacity: 0;
+			top:-30px;	
+		}
+		to   
+		{ 
+			opacity: 1;
+			top:-300px;
+		}
+	}
+	@-moz-keyframes nuvem {
+		from { 
+			opacity: 0;
+			top:-70px;	
+		}
+		to   
+		{ 
+			opacity: 1;
+			top:-200px;
+		}
+	}
+	.nuvem .it-1{
+		background-color:#fff;
+		border-radius:60px;
+		-moz-border-radius:60px;
+		-webkit-border-radius:60px;
+		display:inline-block;
+		height:60px;
+		position:relative; left:-40px; top:-5px;
+		width:60px;
+	}
+	.nuvem .it-2{
+		background-color:#fff;
+		border-radius:80px;
+		-moz-border-radius:80px;
+		-webkit-border-radius:80px;
+		display:inline-block;
+		height:80px;
+		position:relative; top:-80px;
+		width:100px;
+	}
+	.nuvem .it-3{
+		background-color:#fff;
+		border-radius:60px;
+		-moz-border-radius:60px;
+		-webkit-border-radius:60px;
+		display:inline-block;
+		height:60px;
+		position:relative; top:-185px;
+		width:60px;
+	}
+	.nuvem .it-4{
+		background-color:#fff;
+		border-radius:60px;
+		-moz-border-radius:60px;
+		-webkit-border-radius:60px;
+		display:inline-block;
+		height:60px;
+		position:relative; top:-200px;
+		width:60px;
+	}
+	.nuvem .it-5{
+		background-color:#fff;
+		border-radius:45px;
+		-moz-border-radius:45px;
+		-webkit-border-radius:45px;
+		display:inline-block;
+		height:45px;
+		position:relative; top:-225px; left:20px;
+		width:45px;
+	}
+	.trilho{
+		position:fixed; bottom:100px;
+		width:100%;
+		overflow:hidden;
+	}
+	.trilho .content{
+		float:left;
+		width:2500px;
+	}
+	.trilho .bottom{
+		background-image: -o-linear-gradient(top, rgb(87, 87, 87) 0%, rgb(153, 153, 153) 100%);
+		background-image: -moz-linear-gradient(top, rgb(87, 87, 87) 0%, rgb(153, 153, 153) 100%);
+		background-image: -webkit-linear-gradient(top, rgb(87, 87, 87) 0%, rgb(153, 153, 153) 100%);
+		background-image: -ms-linear-gradient(top, rgb(87, 87, 87) 0%, rgb(153, 153, 153) 100%);
+		background-image: linear-gradient(to top, rgb(87, 87, 87) 0%, rgb(153, 153, 153) 100%);
+		border-top:solid 3px #585858;
+		border-bottom:solid 3px #3e3d3d;
+		float:left;
+		height:40px;
+		position:relative; top:-13px;
+		width:100%;
+		z-index:1;
+	}
+	.bg-trilhos{
+		background-color:#8a8989;
+		float:left;
+		width:100%;
+	}
+	.trilho .center{
+		background-color:#7d4905;
+		border:solid 4px #583303;
+		background-width:50px;
+		float:left;
+		margin:0 33px; top:0;
+		height:160px;
+		width:55px;
+		-moz-transform:rotate(15deg);
+		-webkit-transform:rotate(15deg);
+		
+		-webkit-animation:trilho 2.5s linear infinite;
+		-moz-animation:trilho 2.5s linear infinite;
+		animation:trilho 2.5s linear infinite;
+	}
+	@-moz-keyframes trilho { 
+		from {
+		  left:0%;
+	   }
+	   to { 
+		 left:-10%;
+	   }
+	}
+	@-webkit-keyframes trilho {
+		from {
+		  left:0%;
+	   }
+	   to { 
+		 left:-10%;
+	   }
+	}
+	@keyframes trilho {
+		from {
+		  left:0%;
+	   }
+	   to { 
+		 left:-66px;
+	   }
+	}
+	
+	.trilho .top{
+		background-image: -o-linear-gradient(top, rgb(87, 87, 87) 0%, rgb(153, 153, 153) 100%);
+		background-image: -moz-linear-gradient(top, rgb(87, 87, 87) 0%, rgb(153, 153, 153) 100%);
+		background-image: -webkit-linear-gradient(top, rgb(87, 87, 87) 0%, rgb(153, 153, 153) 100%);
+		background-image: -ms-linear-gradient(top, rgb(87, 87, 87) 0%, rgb(153, 153, 153) 100%);
+		background-image: linear-gradient(to top, rgb(87, 87, 87) 0%, rgb(153, 153, 153) 100%);
+		border-top:solid 3px #585858;
+		border-bottom:solid 3px #3e3d3d;
+		float:left;
+		height:25px;
+		position:relative; top:13px;
+		width:100%;
+		z-index:1;
+	}
+	audio{
+		opacity:0;
+		position:absolute; left:0; top:0;
+	}
+	
+</style>
+<body>
+	<audio controls autoplay loop>
+	   <source src="http://wellingtonfialho.com/train_.mp3" type="audio/mpeg">
+	</audio>
+	<div class="center">
+		
+		<div class="trem">
+			<!-- CABINE -->
+			<div class="cabine">
+				<!-- Teto -->
+				<div class="teto">
+					<div class="detalhe">
+						<div class="vidro"></div>
+					</div>
+				</div>
+				<!-- Teto -->
+				
+				<!-- Janela Lateral -->
+				<div class="janela-lateral">
+					<div class="porta">
+						<div class="vidro">
+							<div class="fecho">
+								<span></span>
+							</div>
+						</div>
+						<div class="macaneta">
+							<span class="it-1"></span>
+							<span class="it-2"></span>
+						</div>
+					</div>
+				</div>
+				<!-- Janela Lateral -->
+				
+				<!-- Janela Lateral -->
+				<div class="janela-frente">
+					<div class="vidro">
+						<span class="it-1"></span>
+						<span class="it-2"></span>
+						<span class="it-3"></span>
+					</div>
+				</div>
+				<!-- Janela Lateral -->
+			</div>
+			<!-- CABINE -->
+			
+			<!-- CHAMINE -->
+			<div class="chamine">
+				<div class="top"></div>
+				<div class="bottom"></div>
+				
+				<!-- Nuvem -->
+				<div class="nuvem">
+					<span class="it-1"></span>
+					<span class="it-2"></span>
+					<span class="it-3"></span>
+					<span class="it-4"></span>
+					<span class="it-5"></span>
+				</div>
+				<!-- Nuvem -->
+				
+			</div>
+			<!-- CHAMINE -->
+			
+			<!-- MOTOR -->
+			<div class="motor">
+				<div class="color">
+					<span class="it-1"></span>
+					<span class="it-2"></span>
+					<div class="circle">
+						<div class="center">
+							<span></span>
+						</div>
+					</div>
+				</div>
+				<!-- Grade -->
+				<div class="grade">
+				</div>
+				<!-- Grade -->
+			</div>
+			<!-- MOTOR -->
+			
+			<!-- CARROCERIA -->
+			<div class="carroceria">
+				<!-- Vagão -->
+				<div class="vagao"></div>
+				<!-- Vagão -->
+			</div>
+			<!-- CARROCERIA -->
+		</div>
+		<!-- RODA -->
+		<div class="roda">
+			<div class="rod small">
+				<div class="content">
+					<div class="top"></div>
+					<div class="center"></div>
+					<div class="left"></div>
+				</div>
+			</div>
+			<div class="rod small">
+				<div class="content">
+					<div class="top"></div>
+					<div class="center"></div>
+					<div class="left"></div>
+				</div>
+			</div>
+			<div class="rod big">
+				<div class="content">
+					<div class="top"></div>
+					<div class="center"></div>
+					<div class="left"></div>
+				</div>
+			</div>
+			<div class="rod medium">
+				<div class="content">
+					<div class="top"></div>
+					<div class="center"></div>
+					<div class="left"></div>
+				</div>
+			</div>
+		</div>
+		<!-- RODA -->
+	</div>
+	
+	<!-- TRILHO -->
+	<div class="trilho">
+		<div class="content">
+			<div class="top"></div>
+			<div class="bg-trilhos">
+				<div class="center"></div>
+				<div class="center"></div>
+				<div class="center"></div>
+				<div class="center"></div>
+				<div class="center"></div>
+				<div class="center"></div>
+				<div class="center"></div>
+				<div class="center"></div>
+				<div class="center"></div>
+				<div class="center"></div>
+				<div class="center"></div>
+				<div class="center"></div>
+				<div class="center"></div>
+				<div class="center"></div>
+				<div class="center"></div>
+				<div class="center"></div>
+				<div class="center"></div>
+				<div class="center"></div>
+			</div>			
+			<div class="bottom"></div>
+		</div>
+	</div>
+	<!-- TRILHO -->
+</body>
+</html>
